@@ -37,13 +37,6 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-function ensureDbConnection(req, res, next) {
-  if (!db) {
-    console.error('Database connection not established');
-    return res.status(500).json({ error: 'Database connection not established' });
-  }
-  next();
-}
 
 // Serve static files
 app.use(express.static('public'));
